@@ -1,0 +1,25 @@
+#!/bin/bash
+set -e
+
+THIS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+mkdir -p ~/.config 
+
+# i3wm
+mkdir -p ~/.config/i3
+rm ~/.config/i3/config
+ln -s $THIS_DIR/i3/config ~/.config/i3/config
+exec i3-msg reload > /dev/null 2>&1
+
+# VIM
+rm ~/.vimrc
+ln -s $THIS_DIR/vim/.vimrc ~/.vimrc
+
+# ZSH
+rm ~/.zshrc
+ln -s $THIS_DIR/zsh/.zshrc ~/.zshrc
+
+# Bash
+rm ~/.bash_profile
+ln -s $THIS_DIR/bash/.bash_profile ~/.bash_profile
+
