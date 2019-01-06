@@ -7,19 +7,23 @@ mkdir -p ~/.config
 
 # i3wm
 mkdir -p ~/.config/i3
-rm ~/.config/i3/config
+rm -f ~/.config/i3/config
 ln -s $THIS_DIR/i3/config ~/.config/i3/config
-exec i3-msg reload > /dev/null 2>&1
+i3-msg reload > /dev/null 2>&1
+
+# Compton
+rm -f ~/.config/compton.conf
+ln -s $THIS_DIR/vim/.vimrc ~/.config/compton.conf
 
 # VIM
-rm ~/.vimrc
+rm -f ~/.vimrc
 ln -s $THIS_DIR/vim/.vimrc ~/.vimrc
 
 # ZSH
-rm ~/.zshrc
+rm -f ~/.zshrc
 ln -s $THIS_DIR/zsh/.zshrc ~/.zshrc
 
 # Bash
-rm ~/.bash_profile
+rm -f ~/.bash_profile
 ln -s $THIS_DIR/bash/.bash_profile ~/.bash_profile
 
